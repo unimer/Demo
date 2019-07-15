@@ -20,9 +20,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "LogIn", "User")</li>
                     <li>@Html.ActionLink("MyNotes", "ListNotes", "User")</li>
                     <li>@Html.ActionLink("NewNote", "NewNote", "User")</li>
+                    <li>@Html.ActionLink("LogIn", "LogIn", "User")</li>
                 </ul>
             </div>
         </div>
@@ -35,8 +35,13 @@
         </footer>
     </div>
 
+    <div id="Notification" class="alert @ViewBag.Type">
+        <strong>@ViewBag.Notification</strong>
+    </div>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    
 </body>
 </html>

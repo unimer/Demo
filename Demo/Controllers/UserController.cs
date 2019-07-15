@@ -20,12 +20,37 @@ namespace Demo.Controllers
             return View();
         }
 
+
+    
         
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogIn(UserModel model)
         {
+            if (model.UserName == "root" && model.Password == "root")
+            {
+                
+               
+
+                return RedirectToAction("ListNotes");
+            }
+           
             return View();
+        }
+
+        
+        public ActionResult ListNotes()
+        {
+            List<NoteModel> notes = new List<NoteModel>();
+
+            notes.Add(new NoteModel
+            {
+                Title = "Note 1",
+                Text = "Note Text 1"
+            });
+
+
+            return View(notes);
         }
     }
 }

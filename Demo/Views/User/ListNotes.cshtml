@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Demo.Models.NoteModel>
+
+@{
+    ViewBag.Title = "ListNotes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListNotes</h2>
+
+<button id="collapse_button" type="button" class="btn btn-primary btn-lg">Collapse All</button>
+
+<table id="notes-panel" class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>
+
+    </tr>
+}
+
+</table>
+
+<script src="~/Scripts/nikola_script.js"></script>
