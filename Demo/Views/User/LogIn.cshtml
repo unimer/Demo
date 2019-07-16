@@ -12,6 +12,12 @@
 {
     @Html.AntiForgeryToken()
 
+
+    <div id="Notification" class="alert @ViewBag.Type">
+        <strong>@ViewBag.Notification</strong>
+    </div>
+
+
     <div class="form-horizontal">
 
         <hr />
@@ -50,5 +56,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-
+    <script src="~/Scripts/nikola_script.js"></script>
 }

@@ -59,6 +59,11 @@ namespace Demo.Controllers
 
                 return RedirectToAction("ListNotes");
             }
+            else
+            {
+                ViewBag.Notification = "Login Failed!";
+                ViewBag.Type = "alert-danger";
+            }
            
             return View();
         }
