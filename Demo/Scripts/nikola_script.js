@@ -1,7 +1,9 @@
 ﻿$("#Notification").fadeOut(3000);
 
+$(function () {
+    $('#collapsebtn').on('click', function () {
+        $('#notespnl').toggle();
+    });
 
-$('#collapse-button').on('click', function () {
-    $('#notes-panel').toggle();
 });
 

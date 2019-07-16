@@ -7,9 +7,9 @@
 
 <h2>ListNotes</h2>
 
-<button id="collapse_button" type="button" class="btn btn-primary btn-lg">Collapse All</button>
+<button id="collapsebtn" type="button" class="btn btn-primary btn-lg collapsable">Show/Hide</button>
 
-<table id="notes-panel" class="table">
+<table id="notespnl" class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Title)
@@ -20,18 +20,23 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Text)
-        </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
 
-    </tr>
-}
+        </tr>
+    }
 
 </table>
 
-<script src="~/Scripts/nikola_script.js"></script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/nikola_script.js"></script>
+}

@@ -16,12 +16,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Demo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("MyNotes", "ListNotes", "User")</li>
-                    <li>@Html.ActionLink("NewNote", "NewNote", "User")</li>
+                    <li>@Html.ActionLink("NewNote", "AddNewNote", "User")</li>
                     <li>@Html.ActionLink("LogIn", "LogIn", "User")</li>
                 </ul>
             </div>
@@ -35,9 +35,6 @@
         </footer>
     </div>
 
-    <div id="Notification" class="alert @ViewBag.Type">
-        <strong>@ViewBag.Notification</strong>
-    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
